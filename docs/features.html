@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Features - Laravel Visual Migrator | Dashboard, Visual Editor, Export & Sync</title>
+    <meta name="description"
+        content="Explore key features: interactive dashboard, visual schema editor, export to migration files, and bidirectional sync. All powered by Vue Flow." />
+    <meta name="keywords"
+        content="laravel visual migrator, features, dashboard, visual editor, export migration, bidirectional sync, vue flow" />
+    <meta name="author" content="Eko Suprianto" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#FF2D20" />
+    <link rel="canonical" href="https://ekosuprianto96.github.io/laravel-visual-migrator/features.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Features - Laravel Visual Migrator" />
+    <meta property="og:description"
+        content="Explore key features: interactive dashboard, visual schema editor, export to migration files, and bidirectional sync." />
+    <meta property="og:url" content="https://ekosuprianto96.github.io/laravel-visual-migrator/features.html" />
+    <meta property="og:site_name" content="Laravel Visual Migrator" />
+    <meta property="og:image" content="images/screenshot-dashboard.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Features - Laravel Visual Migrator" />
+    <meta name="twitter:description"
+        content="Interactive dashboard, visual schema editor, export migrations & bidirectional sync." />
+    <meta name="twitter:image" content="images/screenshot-dashboard.png" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF2D20",
+                        "background-dark": "#1a1a1a",
+                        "sidebar-dark": "#121212",
+                        "code-dark": "#2d2d2d",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-white dark:bg-background-dark text-gray-900 dark:text-gray-300 antialiased">
+
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur">
+        <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white">
+                    <span class="material-icons-outlined text-xl">database</span>
+                </div>
+                <span class="font-bold text-lg tracking-tight hidden md:block dark:text-white">Laravel Visual
+                    Migrator</span>
+            </div>
+            <div class="flex-1 max-w-md px-8 hidden md:block">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400"><span
+                            class="material-icons-outlined text-sm">search</span></span>
+                    <input id="search-input"
+                        class="w-full bg-gray-100 dark:bg-gray-800/50 border-0 rounded-lg pl-10 pr-16 py-1.5 text-sm focus:ring-1 focus:ring-primary"
+                        placeholder="Search docs..." type="text" />
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                        <kbd
+                            class="hidden sm:inline-block px-1.5 py-0.5 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-[10px] text-gray-400 uppercase">Ctrl
+                            K</kbd>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex items-center gap-6 text-sm font-medium">
+                <a class="hover:text-primary transition-colors dark:text-gray-300" href="index.html">Docs</a>
+                <a class="text-primary" href="features.html">Features</a>
+                <a class="hover:text-primary transition-colors dark:text-gray-300" href="changelog.html">Changelog</a>
+                <div class="w-px h-4 bg-gray-300 dark:bg-gray-700"></div>
+                <a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors"
+                    href="https://github.com/ekosuprianto96/laravel-visual-migrator" target="_blank">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="max-w-[1440px] mx-auto flex">
+        <!-- Sidebar -->
+        <aside
+            class="w-64 fixed left-0 top-16 bottom-0 hidden lg:block overflow-y-auto custom-scrollbar border-r border-gray-200 dark:border-gray-800 p-6">
+            <nav class="space-y-8">
+                <div>
+                    <h5 class="mb-3 text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+                        Getting Started</h5>
+                    <ul class="space-y-2 border-l border-gray-200 dark:border-gray-800 ml-1">
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="index.html">Introduction</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="installation.html">Installation</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="installation.html#configuration">Configuration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="mb-3 text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+                        Features</h5>
+                    <ul class="space-y-2 border-l border-gray-200 dark:border-gray-800 ml-1">
+                        <li><a class="block pl-4 -ml-px border-l border-primary text-primary font-medium"
+                                href="#dashboard">Dashboard</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="#visual-editor">Visual Editor</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="#export">Export Migrations</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="#sync">Sync to Migrations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="mb-3 text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+                        Resources</h5>
+                    <ul class="space-y-2 border-l border-gray-200 dark:border-gray-800 ml-1">
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="changelog.html">Changelog</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="https://github.com/ekosuprianto96/laravel-visual-migrator"
+                                target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-64 lg:mr-64 p-8 lg:p-12 min-h-screen">
+            <article class="max-w-3xl">
+
+                <h1 class="text-4xl font-extrabold tracking-tight mb-4 text-gray-900 dark:text-white">Features</h1>
+                <p class="text-xl text-gray-500 dark:text-gray-400 mb-12">A complete visual toolkit for managing your
+                    Laravel database schema.</p>
+
+                <!-- ====== Dashboard ====== -->
+                <section id="dashboard" class="mb-16">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                            <span class="material-icons-outlined text-primary text-xl">dashboard_customize</span>
+                        </span>
+                        <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100">Interactive
+                            Dashboard</h2>
+                    </div>
+                    <p class="text-lg leading-7 mb-6 text-gray-600 dark:text-gray-400">The centerpiece of Laravel Visual
+                        Migrator — a fully interactive, drag-and-drop canvas powered by <strong
+                            class="dark:text-gray-200">Vue Flow</strong>. Visualize your entire database schema at a
+                        glance with real-time positioning and relationship lines.</p>
+
+                    <ul class="space-y-2 mb-8 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Drag and resize
+                            table nodes freely on the canvas</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Smart auto-layout
+                            with preserved custom positions</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Relationship lines
+                            with cardinality indicators</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Tab visibility
+                            awareness — pauses polling when inactive</li>
+                    </ul>
+
+                    <div
+                        class="screenshot-card rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl">
+                        <img src="images/screenshot-dashboard.png"
+                            alt="Visual Migrator Dashboard showing table nodes and relationships"
+                            class="w-full screenshot-trigger cursor-zoom-in" />
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3 text-center italic">Interactive diagram dashboard with table
+                        nodes and relationship connections</p>
+                </section>
+
+                <!-- ====== Visual Editor ====== -->
+                <section id="visual-editor" class="mb-16">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center">
+                            <span class="material-icons-outlined text-blue-500 text-xl">edit_note</span>
+                        </span>
+                        <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100">Visual Schema
+                            Editor</h2>
+                    </div>
+                    <p class="text-lg leading-7 mb-6 text-gray-600 dark:text-gray-400">Create and edit tables directly
+                        in the visual interface. Add columns, set data types, define constraints, and manage indexes —
+                        all without writing a single line of migration code.</p>
+
+                    <ul class="space-y-2 mb-8 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Add tables with a
+                            single click</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Full column type
+                            support (string, integer, boolean, json, uuid, etc.)</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Define primary
+                            keys, nullable, default values</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Draft tables saved
+                            to LocalStorage — never lose your work</li>
+                    </ul>
+
+                    <div
+                        class="screenshot-card rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl">
+                        <img src="images/screenshot-create-db.png" alt="Creating a new table with the Visual Editor"
+                            class="w-full screenshot-trigger cursor-zoom-in" />
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3 text-center italic">Create new tables and define columns
+                        visually</p>
+                </section>
+
+                <!-- ====== Export ====== -->
+                <section id="export" class="mb-16">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center">
+                            <span class="material-icons-outlined text-green-500 text-xl">file_download</span>
+                        </span>
+                        <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100">Export to
+                            Migration Files</h2>
+                    </div>
+                    <p class="text-lg leading-7 mb-6 text-gray-600 dark:text-gray-400">Transform your visual design into
+                        clean, PSR-compliant Laravel migration PHP files. Choose which tables to export and the package
+                        generates properly formatted migration files in your <code
+                            class="bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded text-sm font-mono text-primary">database/migrations</code>
+                        folder.</p>
+
+                    <ul class="space-y-2 mb-8 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Table selection —
+                            export only what you need</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Auto-generates
+                            foreign key constraints</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Clean, timestamped
+                            migration file naming</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Supports all
+                            Laravel column types</li>
+                    </ul>
+
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div
+                            class="screenshot-card rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl">
+                            <img src="images/screenshot-export-1.png" alt="Selecting tables for export"
+                                class="w-full screenshot-trigger cursor-zoom-in" />
+                        </div>
+                        <div
+                            class="screenshot-card rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl">
+                            <img src="images/screenshot-export-2.png" alt="Generated migration code preview"
+                                class="w-full screenshot-trigger cursor-zoom-in" />
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 text-center italic">Left: Select tables to export — Right: Preview
+                        generated migration code</p>
+                </section>
+
+                <!-- ====== Sync ====== -->
+                <section id="sync" class="mb-16">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center">
+                            <span class="material-icons-outlined text-purple-500 text-xl">sync</span>
+                        </span>
+                        <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100">Bidirectional
+                            Sync</h2>
+                    </div>
+                    <p class="text-lg leading-7 mb-6 text-gray-600 dark:text-gray-400">Already have existing migrations?
+                        No problem. Laravel Visual Migrator can scan your <code
+                            class="bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded text-sm font-mono text-primary">database/migrations</code>
+                        folder and automatically create visual representations of your tables. Changes detected on the
+                        server trigger a sync notification.</p>
+
+                    <ul class="space-y-2 mb-8 text-gray-600 dark:text-gray-400">
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Auto-scan existing
+                            migration files</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Real-time change
+                            detection with throttled polling</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Non-destructive —
+                            never overwrites existing files</li>
+                        <li class="flex items-start gap-2"><span class="text-green-500 mt-1">✓</span> Smart merging
+                            preserves custom node positions</li>
+                    </ul>
+
+                    <div
+                        class="screenshot-card rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl">
+                        <img src="images/screenshot-sync.png" alt="Syncing migrations to visual diagram"
+                            class="w-full screenshot-trigger cursor-zoom-in" />
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3 text-center italic">Sync existing migration files to the visual
+                        diagram</p>
+                </section>
+
+                <!-- ====== Performance ====== -->
+                <section id="performance" class="mb-16">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center">
+                            <span class="material-icons-outlined text-amber-500 text-xl">speed</span>
+                        </span>
+                        <h2 class="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100">Performance First
+                        </h2>
+                    </div>
+                    <p class="text-lg leading-7 mb-6 text-gray-600 dark:text-gray-400">Built with performance in mind,
+                        ensuring your development experience stays smooth.</p>
+
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800/30 p-5 rounded-lg border border-gray-200 dark:border-gray-800 text-center">
+                            <span class="material-icons-outlined text-amber-500 mb-3 text-3xl">timer</span>
+                            <h4 class="font-bold mb-1 dark:text-white text-sm">Debounced Requests</h4>
+                            <p class="text-xs text-gray-500">Layout saving uses debounced requests to minimize network
+                                traffic.</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800/30 p-5 rounded-lg border border-gray-200 dark:border-gray-800 text-center">
+                            <span class="material-icons-outlined text-amber-500 mb-3 text-3xl">visibility</span>
+                            <h4 class="font-bold mb-1 dark:text-white text-sm">Tab Awareness</h4>
+                            <p class="text-xs text-gray-500">Polling pauses when the browser tab is inactive to save
+                                resources.</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 dark:bg-gray-800/30 p-5 rounded-lg border border-gray-200 dark:border-gray-800 text-center">
+                            <span class="material-icons-outlined text-amber-500 mb-3 text-3xl">data_object</span>
+                            <h4 class="font-bold mb-1 dark:text-white text-sm">Lightweight Metadata</h4>
+                            <p class="text-xs text-gray-500">Layout and relationship data stored efficiently in a single
+                                JSON file.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Navigation -->
+                <div class="flex justify-between items-center mt-16">
+                    <a href="installation.html"
+                        class="flex items-center gap-2 text-gray-500 hover:text-primary transition-colors font-medium">
+                        <span class="material-icons-outlined text-lg">arrow_back</span>
+                        Installation
+                    </a>
+                    <a href="changelog.html"
+                        class="flex items-center gap-2 bg-primary hover:bg-red-600 text-white px-5 py-2.5 rounded-lg font-bold transition-colors">
+                        Changelog
+                        <span class="material-icons-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+
+                <footer
+                    class="mt-20 pt-8 border-t border-gray-200 dark:border-gray-800 flex justify-between items-center text-sm text-gray-500">
+                    <a class="flex items-center gap-2 hover:text-primary transition-colors"
+                        href="https://github.com/ekosuprianto96/laravel-visual-migrator" target="_blank">
+                        <span class="material-icons-outlined text-sm">edit</span>
+                        Edit this page on GitHub
+                    </a>
+                    <span>Last updated: Feb 22, 2026</span>
+                </footer>
+            </article>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="w-64 fixed right-0 top-16 bottom-0 hidden xl:block p-8 overflow-y-auto">
+            <h5 class="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-widest mb-4">On This Page</h5>
+            <ul class="space-y-3 text-sm">
+                <li><a class="toc-link text-primary font-medium" href="#dashboard">Interactive Dashboard</a></li>
+                <li><a class="toc-link text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        href="#visual-editor">Visual Schema Editor</a></li>
+                <li><a class="toc-link text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        href="#export">Export Migrations</a></li>
+                <li><a class="toc-link text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        href="#sync">Bidirectional Sync</a></li>
+                <li><a class="toc-link text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        href="#performance">Performance</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="lg:hidden fixed bottom-6 right-6">
+        <button id="mobile-menu-btn"
+            class="w-14 h-14 bg-primary rounded-full shadow-2xl flex items-center justify-center text-white">
+            <span class="material-icons-outlined">menu</span>
+        </button>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox-overlay">
+        <img id="lightbox-img" src="" alt="Screenshot Preview" />
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

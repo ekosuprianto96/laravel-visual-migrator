@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Installation & Configuration - Laravel Visual Migrator</title>
+    <meta name="description"
+        content="Step-by-step guide to install and configure Laravel Visual Migrator. Supports Laravel 10, 11, and 12 with Composer and Artisan commands." />
+    <meta name="keywords"
+        content="laravel visual migrator, installation, composer, artisan, configuration, publish assets, setup" />
+    <meta name="author" content="Eko Suprianto" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#FF2D20" />
+    <link rel="canonical" href="https://ekosuprianto96.github.io/laravel-visual-migrator/installation.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Installation & Configuration - Laravel Visual Migrator" />
+    <meta property="og:description"
+        content="Step-by-step guide to install and configure Laravel Visual Migrator. Supports Laravel 10, 11, and 12." />
+    <meta property="og:url" content="https://ekosuprianto96.github.io/laravel-visual-migrator/installation.html" />
+    <meta property="og:site_name" content="Laravel Visual Migrator" />
+    <meta property="og:image" content="images/screenshot-dashboard.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Installation - Laravel Visual Migrator" />
+    <meta name="twitter:description" content="Step-by-step guide to install and configure Laravel Visual Migrator." />
+    <meta name="twitter:image" content="images/screenshot-dashboard.png" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF2D20",
+                        "background-dark": "#1a1a1a",
+                        "sidebar-dark": "#121212",
+                        "code-dark": "#2d2d2d",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-white dark:bg-background-dark text-gray-900 dark:text-gray-300 antialiased">
+
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur">
+        <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white">
+                    <span class="material-icons-outlined text-xl">database</span>
+                </div>
+                <span class="font-bold text-lg tracking-tight hidden md:block dark:text-white">Laravel Visual
+                    Migrator</span>
+            </div>
+            <div class="flex-1 max-w-md px-8 hidden md:block">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400"><span
+                            class="material-icons-outlined text-sm">search</span></span>
+                    <input id="search-input"
+                        class="w-full bg-gray-100 dark:bg-gray-800/50 border-0 rounded-lg pl-10 pr-16 py-1.5 text-sm focus:ring-1 focus:ring-primary"
+                        placeholder="Search docs..." type="text" />
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                        <kbd
+                            class="hidden sm:inline-block px-1.5 py-0.5 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-[10px] text-gray-400 uppercase">Ctrl
+                            K</kbd>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex items-center gap-6 text-sm font-medium">
+                <a class="text-primary" href="index.html">Docs</a>
+                <a class="hover:text-primary transition-colors dark:text-gray-300" href="features.html">Features</a>
+                <a class="hover:text-primary transition-colors dark:text-gray-300" href="changelog.html">Changelog</a>
+                <div class="w-px h-4 bg-gray-300 dark:bg-gray-700"></div>
+                <a class="text-gray-500 dark:text-gray-400 hover:text-primary transition-colors"
+                    href="https://github.com/ekosuprianto96/laravel-visual-migrator" target="_blank">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="max-w-[1440px] mx-auto flex">
+        <!-- Sidebar -->
+        <aside
+            class="w-64 fixed left-0 top-16 bottom-0 hidden lg:block overflow-y-auto custom-scrollbar border-r border-gray-200 dark:border-gray-800 p-6">
+            <nav class="space-y-8">
+                <div>
+                    <h5 class="mb-3 text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+                        Getting Started</h5>
+                    <ul class="space-y-2 border-l border-gray-200 dark:border-gray-800 ml-1">
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="index.html">Introduction</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-primary text-primary font-medium"
+                                href="installation.html">Installation</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="#configuration">Configuration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="mb-3 text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+                        Features</h5>
+                    <ul class="space-y-2 border-l border-gray-200 dark:border-gray-800 ml-1">
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="features.html#dashboard">Dashboard</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="features.html#visual-editor">Visual Editor</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="features.html#export">Export Migrations</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="features.html#sync">Sync to Migrations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="mb-3 text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">
+                        Resources</h5>
+                    <ul class="space-y-2 border-l border-gray-200 dark:border-gray-800 ml-1">
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="changelog.html">Changelog</a></li>
+                        <li><a class="block pl-4 -ml-px border-l border-transparent hover:border-gray-400 dark:hover:border-gray-500 transition-colors sidebar-link"
+                                href="https://github.com/ekosuprianto96/laravel-visual-migrator"
+                                target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-64 lg:mr-64 p-8 lg:p-12 min-h-screen">
+            <article class="max-w-3xl">
+
+                <h1 class="text-4xl font-extrabold tracking-tight mb-4 text-gray-900 dark:text-white">Installation</h1>
+                <p class="text-xl text-gray-500 dark:text-gray-400 mb-8">Get Laravel Visual Migrator up and running in
+                    minutes.</p>
+
+                <!-- Step 1 -->
+                <h2 id="install-package"
+                    class="text-2xl font-bold tracking-tight mt-12 mb-4 text-gray-800 dark:text-gray-100">1. Install via
+                    Composer</h2>
+                <p class="text-lg leading-7 mb-6 text-gray-600 dark:text-gray-400">Install the package using Composer:
+                </p>
+
+                <div class="code-block bg-code-dark rounded-xl overflow-hidden mb-8 shadow-lg">
+                    <div class="flex items-center justify-between px-4 py-2 bg-[#252525] border-b border-gray-700">
+                        <span class="text-xs text-gray-400 font-mono">Terminal</span>
+                        <button class="copy-btn text-gray-400 hover:text-white transition-colors">
+                            <span class="material-icons-outlined text-sm">content_copy</span>
+                        </button>
+                    </div>
+                    <div class="p-6 font-mono text-sm overflow-x-auto text-gray-300">
+                        <code class="code-content">composer require ekosuprianto96/laravel-visual-migrator</code>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <h2 id="publish-setup"
+                    class="text-2xl font-bold tracking-tight mt-12 mb-4 text-gray-800 dark:text-gray-100">2. Publish &
+                    Setup</h2>
+                <p class="text-lg leading-7 mb-6 text-gray-600 dark:text-gray-400">Run the install command to
+                    automatically publish assets, configuration, and optionally run migrations:</p>
+
+                <div class="code-block bg-code-dark rounded-xl overflow-hidden mb-8 shadow-lg">
+                    <div class="flex items-center justify-between px-4 py-2 bg-[#252525] border-b border-gray-700">
+                        <span class="text-xs text-gray-400 font-mono">Terminal</span>
+                        <button class="copy-btn text-gray-400 hover:text-white transition-colors">
+                            <span class="material-icons-outlined text-sm">content_copy</span>
+                        </button>
+                    </div>
+                    <div class="p-6 font-mono text-sm overflow-x-auto text-gray-300">
+                        <code class="code-content">php artisan visual-migrator:install</code>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 dark:bg-amber-900/20 border-l-4 border-amber-500 p-5 rounded-r-lg mb-8">
+                    <div class="flex gap-3">
+                        <span class="material-icons-outlined text-amber-500 flex-shrink-0">warning</span>
+                        <p class="text-sm text-amber-800 dark:text-amber-200 mb-0"><strong>Note:</strong> If you prefer
+                            to publish assets and configuration individually, you can use the following commands
+                            instead.</p>
+                    </div>
+                </div>
+
+                <!-- Manual Publish -->
+                <h3 id="manual-publish" class="text-xl font-bold mt-8 mb-4 dark:text-white">Manual Publishing</h3>
+
+                <p class="text-base leading-7 mb-4 text-gray-600 dark:text-gray-400"><strong
+                        class="dark:text-gray-200">Publish Everything (Config & Assets):</strong></p>
+                <div class="code-block bg-code-dark rounded-xl overflow-hidden mb-6 shadow-lg">
+                    <div class="flex items-center justify-between px-4 py-2 bg-[#252525] border-b border-gray-700">
+                        <span class="text-xs text-gray-400 font-mono">Terminal</span>
+                        <button class="copy-btn text-gray-400 hover:text-white transition-colors"><span
+                                class="material-icons-outlined text-sm">content_copy</span></button>
+                    </div>
+                    <div class="p-6 font-mono text-sm overflow-x-auto text-gray-300">
+                        <code
+                            class="code-content">php artisan vendor:publish --provider="Ekosuprianto96\VisualMigrator\VisualMigratorServiceProvider"</code>
+                    </div>
+                </div>
+
+                <p class="text-base leading-7 mb-4 text-gray-600 dark:text-gray-400"><strong
+                        class="dark:text-gray-200">Publish Configuration Only:</strong></p>
+                <div class="code-block bg-code-dark rounded-xl overflow-hidden mb-6 shadow-lg">
+                    <div class="flex items-center justify-between px-4 py-2 bg-[#252525] border-b border-gray-700">
+                        <span class="text-xs text-gray-400 font-mono">Terminal</span>
+                        <button class="copy-btn text-gray-400 hover:text-white transition-colors"><span
+                                class="material-icons-outlined text-sm">content_copy</span></button>
+                    </div>
+                    <div class="p-6 font-mono text-sm overflow-x-auto text-gray-300">
+                        <code
+                            class="code-content">php artisan vendor:publish --tag=laravel-visual-migrator-config</code>
+                    </div>
+                </div>
+
+                <p class="text-base leading-7 mb-4 text-gray-600 dark:text-gray-400"><strong
+                        class="dark:text-gray-200">Publish Assets Only (Dashboard UI):</strong></p>
+                <div class="code-block bg-code-dark rounded-xl overflow-hidden mb-8 shadow-lg">
+                    <div class="flex items-center justify-between px-4 py-2 bg-[#252525] border-b border-gray-700">
+                        <span class="text-xs text-gray-400 font-mono">Terminal</span>
+                        <button class="copy-btn text-gray-400 hover:text-white transition-colors"><span
+                                class="material-icons-outlined text-sm">content_copy</span></button>
+                    </div>
+                    <div class="p-6 font-mono text-sm overflow-x-auto text-gray-300">
+                        <code class="code-content">php artisan vendor:publish --tag=visual-migrator-assets</code>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <h2 id="access-dashboard"
+                    class="text-2xl font-bold tracking-tight mt-12 mb-4 text-gray-800 dark:text-gray-100">3. Access the
+                    Dashboard</h2>
+                <p class="text-lg leading-7 mb-6 text-gray-600 dark:text-gray-400">Once installed, visit the dashboard
+                    in your browser:</p>
+
+                <div class="code-block bg-code-dark rounded-xl overflow-hidden mb-8 shadow-lg">
+                    <div class="flex items-center justify-between px-4 py-2 bg-[#252525] border-b border-gray-700">
+                        <span class="text-xs text-gray-400 font-mono">URL</span>
+                    </div>
+                    <div class="p-6 font-mono text-sm text-gray-300">
+                        <code class="code-content">http://your-app.test/visual-migrator</code>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-5 rounded-r-lg mb-8">
+                    <div class="flex gap-3">
+                        <span class="material-icons-outlined text-red-500 flex-shrink-0">security</span>
+                        <p class="text-sm text-red-800 dark:text-red-200 mb-0"><strong>Security:</strong> The dashboard
+                            is only accessible in the <code
+                                class="bg-red-100 dark:bg-red-900/30 px-1.5 py-0.5 rounded text-xs font-mono">local</code>
+                            environment by default. It will not load in production.</p>
+                    </div>
+                </div>
+
+                <hr class="border-gray-200 dark:border-gray-800 my-12" />
+
+                <!-- Configuration -->
+                <h2 id="configuration"
+                    class="text-2xl font-bold tracking-tight mt-12 mb-4 text-gray-800 dark:text-gray-100">Configuration
+                </h2>
+                <p class="text-lg leading-7 mb-6 text-gray-600 dark:text-gray-400">The configuration file is located at
+                    <code
+                        class="bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded text-sm font-mono text-primary">config/visual-migrator.php</code>.
+                    You can customize the following options:
+                </p>
+
+                <div class="code-block bg-code-dark rounded-xl overflow-hidden mb-8 shadow-lg">
+                    <div class="flex items-center justify-between px-4 py-2 bg-[#252525] border-b border-gray-700">
+                        <span class="text-xs text-gray-400 font-mono">config/visual-migrator.php</span>
+                        <button class="copy-btn text-gray-400 hover:text-white transition-colors"><span
+                                class="material-icons-outlined text-sm">content_copy</span></button>
+                    </div>
+                    <div class="p-6 font-mono text-sm overflow-x-auto text-gray-300">
+                        <code class="code-content"><span class="text-gray-500">// config/visual-migrator.php</span>
+
+<span class="text-purple-400">return</span> [
+    <span class="text-green-400">'path'</span> => <span class="text-yellow-400">'visual-migrator'</span>,
+
+    <span class="text-green-400">'middleware'</span> => [
+        <span class="text-yellow-400">'web'</span>,
+        <span class="text-gray-500">// 'auth',</span>
+    ],
+
+    <span class="text-green-400">'ignore_migrations'</span> => [
+        <span class="text-yellow-400">'users'</span>,
+        <span class="text-yellow-400">'password_reset_tokens'</span>,
+        <span class="text-yellow-400">'failed_jobs'</span>,
+        <span class="text-yellow-400">'personal_access_tokens'</span>,
+        <span class="text-yellow-400">'cache'</span>,
+        <span class="text-yellow-400">'jobs'</span>,
+        <span class="text-yellow-400">'job_batches'</span>,
+        <span class="text-yellow-400">'sessions'</span>,
+    ],
+];</code>
+                    </div>
+                </div>
+
+                <!-- Config Options -->
+                <h3 class="text-xl font-bold mt-8 mb-4 dark:text-white">Configuration Options</h3>
+                <div class="space-y-4">
+                    <div
+                        class="bg-gray-50 dark:bg-gray-800/30 p-5 rounded-lg border border-gray-200 dark:border-gray-800">
+                        <h4 class="font-bold mb-2 dark:text-white"><code
+                                class="text-primary font-mono text-sm">path</code></h4>
+                        <p class="text-sm text-gray-500 mb-0">The URL path where the visual migrator dashboard will be
+                            accessible. Change this to customize the route prefix.</p>
+                    </div>
+                    <div
+                        class="bg-gray-50 dark:bg-gray-800/30 p-5 rounded-lg border border-gray-200 dark:border-gray-800">
+                        <h4 class="font-bold mb-2 dark:text-white"><code
+                                class="text-primary font-mono text-sm">middleware</code></h4>
+                        <p class="text-sm text-gray-500 mb-0">Array of middleware applied to all visual migrator routes.
+                            Add <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded text-xs">'auth'</code> to require
+                            authentication.</p>
+                    </div>
+                    <div
+                        class="bg-gray-50 dark:bg-gray-800/30 p-5 rounded-lg border border-gray-200 dark:border-gray-800">
+                        <h4 class="font-bold mb-2 dark:text-white"><code
+                                class="text-primary font-mono text-sm">ignore_migrations</code></h4>
+                        <p class="text-sm text-gray-500 mb-0">Tables listed here will be excluded from the visual
+                            diagram. Perfect for hiding Laravel system/boilerplate tables.</p>
+                    </div>
+                </div>
+
+                <hr class="border-gray-200 dark:border-gray-800 my-12" />
+
+                <!-- Useful Commands -->
+                <h2 id="commands" class="text-2xl font-bold tracking-tight mt-12 mb-4 text-gray-800 dark:text-gray-100">
+                    Artisan Commands</h2>
+                <p class="text-lg leading-7 mb-6 text-gray-600 dark:text-gray-400">Handy commands included with the
+                    package:</p>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 dark:text-white">Reset Metadata</h3>
+                        <p class="text-sm text-gray-500 mb-3">Reset all visual layout data (node positions):</p>
+                        <div class="code-block bg-code-dark rounded-xl overflow-hidden shadow-lg">
+                            <div
+                                class="flex items-center justify-between px-4 py-2 bg-[#252525] border-b border-gray-700">
+                                <span class="text-xs text-gray-400 font-mono">Terminal</span>
+                                <button class="copy-btn text-gray-400 hover:text-white transition-colors"><span
+                                        class="material-icons-outlined text-sm">content_copy</span></button>
+                            </div>
+                            <div class="p-6 font-mono text-sm text-gray-300">
+                                <code class="code-content">php artisan visual-migrator:refresh</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 dark:text-white">Cleanup Orphaned Data</h3>
+                        <p class="text-sm text-gray-500 mb-3">Clean up visual metadata for deleted migration files:</p>
+                        <div class="code-block bg-code-dark rounded-xl overflow-hidden shadow-lg">
+                            <div
+                                class="flex items-center justify-between px-4 py-2 bg-[#252525] border-b border-gray-700">
+                                <span class="text-xs text-gray-400 font-mono">Terminal</span>
+                                <button class="copy-btn text-gray-400 hover:text-white transition-colors"><span
+                                        class="material-icons-outlined text-sm">content_copy</span></button>
+                            </div>
+                            <div class="p-6 font-mono text-sm text-gray-300">
+                                <code class="code-content">php artisan visual-migrator:cleanup</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="flex justify-between items-center mt-16">
+                    <a href="index.html"
+                        class="flex items-center gap-2 text-gray-500 hover:text-primary transition-colors font-medium">
+                        <span class="material-icons-outlined text-lg">arrow_back</span>
+                        Introduction
+                    </a>
+                    <a href="features.html"
+                        class="flex items-center gap-2 bg-primary hover:bg-red-600 text-white px-5 py-2.5 rounded-lg font-bold transition-colors">
+                        Features
+                        <span class="material-icons-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+
+                <footer
+                    class="mt-20 pt-8 border-t border-gray-200 dark:border-gray-800 flex justify-between items-center text-sm text-gray-500">
+                    <a class="flex items-center gap-2 hover:text-primary transition-colors"
+                        href="https://github.com/ekosuprianto96/laravel-visual-migrator" target="_blank">
+                        <span class="material-icons-outlined text-sm">edit</span>
+                        Edit this page on GitHub
+                    </a>
+                    <span>Last updated: Feb 22, 2026</span>
+                </footer>
+            </article>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="w-64 fixed right-0 top-16 bottom-0 hidden xl:block p-8 overflow-y-auto">
+            <h5 class="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-widest mb-4">On This Page</h5>
+            <ul class="space-y-3 text-sm">
+                <li><a class="toc-link text-primary font-medium" href="#install-package">Install via Composer</a></li>
+                <li><a class="toc-link text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        href="#publish-setup">Publish & Setup</a></li>
+                <li><a class="toc-link text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        href="#manual-publish">Manual Publishing</a></li>
+                <li><a class="toc-link text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        href="#access-dashboard">Access Dashboard</a></li>
+                <li><a class="toc-link text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        href="#configuration">Configuration</a></li>
+                <li><a class="toc-link text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                        href="#commands">Artisan Commands</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="lg:hidden fixed bottom-6 right-6">
+        <button id="mobile-menu-btn"
+            class="w-14 h-14 bg-primary rounded-full shadow-2xl flex items-center justify-center text-white">
+            <span class="material-icons-outlined">menu</span>
+        </button>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
