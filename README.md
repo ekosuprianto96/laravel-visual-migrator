@@ -42,6 +42,17 @@ php artisan visual-migrator:install
 
 This command will publish assets, configuration, and offers to run the database migrations for you.
 
+### How to Access
+
+After installation, the Visual Migrator dashboard is available at:
+
+```text
+http://your-app.test/visual-migrator
+```
+
+> [!NOTE]  
+> By default, the dashboard is **only accessible in the `local` environment**. You can change the URL path and middleware in the `config/visual-migrator.php` file.
+
 ### Useful Commands
 
 #### Reset Metadata
