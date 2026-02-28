@@ -1,6 +1,7 @@
 {
     "name": "ekosuprianto96/laravel-visual-migrator",
     "description": "Visual Schema Designer for Laravel Migrations (powered by Mongo Diagram)",
+    "version": "2.6.0",
     "type": "library",
     "license": "MIT",
     "authors": [

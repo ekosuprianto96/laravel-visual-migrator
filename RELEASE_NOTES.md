@@ -1,3 +1,7 @@
+# Release Notes v2.6.0
+
+v2.6.0 updates package dependencies and widens Laravel compatibility to support `illuminate/support` ^10.0, ^11.0, and ^12.0. The version bump also prepares for broader framework support.
+
 # Release Notes v2.5.0
 
 v2.5.0 brings **Laravel 12 Support** and enhanced **Database Compatibility**. 
