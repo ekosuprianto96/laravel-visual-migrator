@@ -1,6 +1,8 @@
 /vendor/
 /.phpunit.result.cache
 /composer.lock
+/.idea
+/.vscode
 .env
 phpunit.xml.bak
 ROADMAP.md
