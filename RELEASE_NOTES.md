@@ -1,3 +1,7 @@
+# Release Notes v2.6.1
+
+v2.6.1 widens Composer compatibility for Laravel 13 by allowing `illuminate/support` ^13.0 and adding `orchestra/testbench` ^11.0 to the package testing dependency range.
+
 # Release Notes v2.6.0
 
 v2.6.0 updates package dependencies and widens Laravel compatibility to support `illuminate/support` ^10.0, ^11.0, and ^12.0. The version bump also prepares for broader framework support.

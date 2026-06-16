@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [2.6.1] - 2026-06-17
+
+### Changed
+- Updated composer dependencies to include Laravel 13 support via `illuminate/support` ^13.0.
+- Added `orchestra/testbench` ^11.0 to the development dependency range for Laravel 13 package testing.
+
 ## [2.6.0] - 2026-02-28
 
 ### Changed

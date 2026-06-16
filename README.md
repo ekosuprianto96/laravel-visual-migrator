@@ -1,6 +1,6 @@
 # Laravel Visual Migrator
 
-**Current version: 2.6.0**
+**Current version: 2.6.1**
 
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ekosuprianto96/laravel-visual-migrator.svg?style=flat-square)](https://packagist.org/packages/ekosuprianto96/laravel-visual-migrator)
