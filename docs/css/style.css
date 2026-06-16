@@ -59,6 +59,13 @@ main article p {
     border: 1px solid rgba(255,255,255,0.08);
     box-shadow: 0 18px 40px rgba(0,0,0,0.22);
 }
+.code-block .code-content {
+    display: block;
+    min-width: max-content;
+    white-space: pre;
+    line-height: 1.75;
+    tab-size: 4;
+}
 .code-block .copy-btn {
     position: absolute;
     top: 0.5rem;
